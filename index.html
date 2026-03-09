@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+
+<div class="container py-5" style="max-width: 820px;">
+
+    <h2 class="fw-bold mb-4">Checkout</h2>
+    <p class="text-muted mb-4">Please enter your personal details and billing information to checkout.</p>
+
+    {{-- PERSONAL INFORMATION --}}
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">Personal Information</div>
+        <div class="card-body">
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">First Name</label>
+                    <input type="text" class="form-control" placeholder="John">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Last Name</label>
+                    <input type="text" class="form-control" placeholder="Doe">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Email Address</label>
+                    <input type="email" class="form-control" placeholder="you@example.com">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Phone Number</label>
+                    <div class="input-group">
+                        <span class="input-group-text">+880</span>
+                        <input type="text" class="form-control" placeholder="17XXXXXXXX">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{-- BILLING INFO --}}
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">Billing Address</div>
+        <div class="card-body">
+            <div class="row g-3">
+
+                <div class="col-md-12">
+                    <label class="form-label">Street Address</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="col-md-12">
+                    <label class="form-label">Street Address 2 (Optional)</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">City</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">State</label>
+                    <input type="text" class="form-control">
+                </div>
+
+                <div class="col-md-4">
+                    <label class="form-label">Postal Code</label>
+                    <input type="text" class="form-control">
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{-- DOMAIN NAME --}}
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">Domain Registration</div>
+        <div class="card-body">
+
+            <div class="row g-3 align-items-end">
+
+                {{-- Domain Name --}}
+                <div class="col-md-8">
+                    <label class="form-label">Domain Name</label>
+                    <input type="text" class="form-control" placeholder="yourdomain">
+                </div>
+
+                {{-- TLD Select --}}
+                <div class="col-md-4">
+                    <label class="form-label">TLD</label>
+                    <select class="form-select">
+                        <option value=".com">.com</option>
+                        <option value=".net">.net</option>
+                        <option value=".org">.org</option>
+                        <option value=".xyz">.xyz</option>
+                        <option value=".info">.info</option>
+                        <option value=".co">.co</option>
+                        <option value=".bd">.bd</option>
+                        <option value=".shop">.shop</option>
+                        <option value=".online">.online</option>
+                    </select>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    {{-- ACCOUNT SECURITY --}}
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">Account Security</div>
+        <div class="card-body">
+
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <label class="form-label">Password</label>
+                    <input type="password" class="form-control">
+                </div>
+
+                <div class="col-md-6">
+                    <label class="form-label">Confirm Password</label>
+                    <input type="password" class="form-control">
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    {{-- PAYMENT --}}
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">Payment Details</div>
+        <div class="card-body">
+
+            <div class="alert alert-success">
+                <strong>Total Due Today:</strong> ৳4,500 BDT
+            </div>
+
+            <label class="form-label d-block mb-2">Choose Payment Method:</label>
+
+            <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="pay" checked>
+                <label class="form-check-label">Bkash, Nagad, Rocket (Instant)</label>
+            </div>
+
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="pay">
+                <label class="form-check-label">Bank Transfer (Slow)</label>
+            </div>
+
+        </div>
+    </div>
+
+    {{-- NOTE --}}
+    <div class="card shadow-sm mb-4">
+        <div class="card-header bg-white fw-bold">Additional Notes</div>
+        <div class="card-body">
+
+            <textarea class="form-control" rows="3" placeholder="Write any notes here..."></textarea>
+
+        </div>
+    </div>
+
+    {{-- PLACE ORDER --}}
+    <div class="text-center">
+        <button class="btn btn-primary btn-lg px-5">Complete Order</button>
+    </div>
+
+</div>
+
+
+
+</body>
+</html>

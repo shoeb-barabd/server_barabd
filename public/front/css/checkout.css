@@ -1,0 +1,233 @@
+:root{ --teal:#118c6b; --ink:#2b3b67; }
+body{
+  font-family:'Poppins',system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  background:#f5f6ff;
+}
+.text-teal{ color:var(--teal); }
+.text-ems{ color:var(--ink); }
+
+.card{ border-radius:20px; }
+.spec-box{
+  background:#f8fbfa;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:14px;
+  padding:14px 16px;
+}
+.spec-box:nth-child(3n+1){
+  background:linear-gradient(145deg, rgba(255,228,230,.95), #fff);
+  border-color: rgba(248,113,113,.25);
+  box-shadow:0 10px 24px rgba(248,113,113,.12);
+}
+.spec-box:nth-child(3n+2){
+  background:linear-gradient(145deg, rgba(209,250,229,.95), #fff);
+  border-color: rgba(34,197,94,.25);
+  box-shadow:0 10px 24px rgba(34,197,94,.12);
+}
+.spec-box:nth-child(3n){
+  background:linear-gradient(145deg, rgba(219,234,254,.95), #fff);
+  border-color: rgba(59,130,246,.25);
+  box-shadow:0 10px 24px rgba(59,130,246,.12);
+}
+.spec-label{ font-size:.8rem; color:#6b7485 }
+.spec-value{ font-weight:700; color:#0f2230 }
+.tax-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:8px;
+}
+.tax-grid .spec-label{ font-size:.75rem; }
+.tax-grid .spec-value{ font-size:1rem; }
+
+.range-wrap{ display:flex; align-items:center; gap:10px }
+.range-values{ min-width:72px; font-weight:700; color:#0f2230 }
+.hint{ font-size:.8rem; color:#6b7485; margin-top:.25rem }
+
+.addons-grid{
+  display:grid; gap:10px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 576px){
+  .addons-grid{ grid-template-columns: 1fr 1fr; }
+}
+.addon-item{
+  display:flex; align-items:center; gap:10px;
+  background:#f8fbfa; border:1px solid rgba(0,0,0,.06);
+  padding:10px 12px; border-radius:12px;
+}
+.addon-item input{ transform:translateY(1px); }
+
+.pay-box{
+  background:#f8fbfa;
+  border:1px solid rgba(0,0,0,.06);
+  border-radius:14px;
+  padding:14px 16px;
+}
+
+/* ====== Gradient Button (Enhanced) ====== */
+/* Deep Blue Glass-Style Button */
+.btn-gradient {
+  color: #fff;
+  border: none;
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  padding: 0.8rem 2rem;
+  background: linear-gradient(180deg, #1a3cff 0%, #001d99 100%);
+  box-shadow:
+    inset 0 2px 6px rgba(255,255,255,0.25),
+    0 8px 20px rgba(0, 32, 128, 0.4);
+  transition: all 0.25s ease;
+}
+
+.btn-gradient:hover {
+  background: linear-gradient(180deg, #264bff 0%, #0028cc 100%);
+  box-shadow:
+    inset 0 3px 8px rgba(255,255,255,0.3),
+    0 10px 25px rgba(0, 32, 128, 0.55);
+  transform: translateY(-1px);
+  color: #fff;
+}
+
+.btn-gradient:active {
+  transform: scale(0.97);
+  box-shadow:
+    inset 0 2px 4px rgba(255,255,255,0.2),
+    0 4px 10px rgba(0, 0, 64, 0.4);
+}
+
+/* Optional: subtle glow for glass reflection */
+.btn-gradient::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 999px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.35) 0%, transparent 60%);
+  pointer-events: none;
+}
+
+.form-control,.form-select{
+  border-radius:12px; padding:.8rem .9rem;
+  border:1.5px solid rgba(0,0,0,.12);
+}
+.form-control:focus,.form-select:focus{
+  border-color:#6a8bff; box-shadow:0 0 0 .2rem rgba(106,139,255,.15);
+}
+
+.tnc-list{ padding-left:18px }
+.tnc-list li + li{ margin-top:.45rem }
+
+/* Back button styling (match site home) */
+.back-home-btn{
+  background:linear-gradient(180deg, #3f67ff 0%, #0b2fcf 100%);
+  color:#fff;
+  border:0;
+  border-radius:999px;
+  padding:.55rem 1.2rem;
+  box-shadow:0 12px 26px rgba(0,30,140,.28);
+  transition:transform .35s cubic-bezier(.23,1,.32,1), box-shadow .35s cubic-bezier(.23,1,.32,1), filter .35s cubic-bezier(.23,1,.32,1);
+}
+.back-home-btn:hover,
+.back-home-btn:focus-visible{
+  color:#fff;
+  transform:translateY(-2px);
+  box-shadow:0 16px 32px rgba(0,30,140,.38);
+  filter:brightness(1.05);
+}
+
+/* Main Discount Card Style */
+.discount-badge {
+    /* Color and Background */
+    background-color: #ff5722; /* Bright Orange Color */
+    color: white; /* White Text */
+
+    /* Size and Padding */
+    padding: 15px 25px;
+    border-radius: 12px; /* Rounded Corners */
+    width: 100%;
+    text-align: center;
+
+    /* Eye-catching Effect (Shadow) */
+    box-shadow: 0 8px 15px rgba(255, 87, 34, 0.4);
+
+    /* Font Style */
+    font-family: Arial, sans-serif;
+    margin: 20px auto; /* Centering */
+
+    /* Gentle movement (Animation) */
+    animation: pulse 2s infinite;
+}
+
+/* Highlighting the 10% number */
+.discount-percentage {
+    font-size: 2.5em; /* Large Font Size */
+    font-weight: 900; /* Extra Bold */
+    text-transform: uppercase;
+    margin: 5px 0;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+/* Small text */
+.discount-text {
+    font-size: 1em;
+    font-weight: 500;
+}
+
+.discount-detail {
+    font-size: 0.9em;
+    opacity: 0.8;
+}
+
+/* Animation - to grab attention */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.03);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.promo-strip{
+  background:linear-gradient(120deg,#0c0332,#3d2dd6);
+  border-radius:18px;
+  padding:22px 28px;
+  color:#fff;
+}
+
+.plan-avatar{
+  width:72px;
+  height:72px;
+  border-radius:20px;
+  background:#eef2ff;
+  color:#4252ff;
+  font-size:32px;
+}
+.plan-avatar i{ font-size:32px; }
+
+.bg-pink{ background:#ff4d9a !important; }
+
+.price-highlight{
+  background:#f4f7ff;
+  border:1px solid rgba(66,82,255,.15);
+}
+
+.order-card{
+  border-radius:20px;
+}
+
+.tnc-list li{
+  position:relative;
+  padding-left:18px;
+}
+.tnc-list li::before{
+  content:'•';
+  position:absolute;
+  left:0;
+  color:#6a8bff;
+}

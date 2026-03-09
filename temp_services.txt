@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Our Services | barabd Data Centers</title>
+    <link rel="icon" type="image/png" href="{{ asset('front/images/logo.png') }}">
+
+    <!-- Fonts & Bootstrap -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+
+    <!-- Page styles -->
+    <link rel="stylesheet" href="{{ asset(url('front/css/styles.css')) }}">
+</head>
+<body class="services-page">
+@php
+    use Illuminate\Support\Str;
+
+    $fmt = function ($value) {
+        if ($value === null || $value === '') {
+            return null;
+        }
+        $s = number_format((float)$value, 3, '.', '');
+        return rtrim(rtrim($s, '0'), '.');
+    };
+
+    $anchorFor = function ($category) {
+        $base = $category->slug ?: $category->name ?: 'service-'.$category->id;
+        $slug = Str::slug($base);
+        return $slug ?: 'service-'.$category->id;
+    };
+
+@endphp
+
+<!-- Fixed Services Nav -->
+<nav class="navbar navbar-expand-lg services-nav fixed-top shadow-sm bg-white">
+    <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="{{ route('index') }}">
+            <img src="{{ asset(url('front/images/logo.png')) }}" alt="Logo" height="38">
+            <span class="fw-bold brand-mark mb-0">
+                <span class="brand-red">bara</span><span class="brand-green">bd Data Center</span>
+            </span>
+        </a>
+
+        <div class="d-flex align-items-center ms-auto gap-2">
+            <a href="{{ route('index') }}#pricing" class="btn btn-outline-success rounded-pill back-home-btn">
+                <i class="bi bi-diagram-3 me-1"></i>Home pricing
+            </a>
+            <a href="{{ route('index') }}" class="btn btn-success rounded-pill back-home-btn">
+                <i class="bi bi-arrow-left me-1"></i>Back to Home
+            </a>
+        </div>
+    </div>
+</nav>
+
+<main class="services-main">
+    <section class="service-hero">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <p class="service-kicker">Our Service Handbook</p>
+                    <h1 class="display-5 fw-bold mb-3">The full story of how we host, protect, and scale</h1>
+                    <p class="lead text-muted mb-4">
+                        Explore every layer of our data center and hosting services in detail. From resilient compute to managed security
+                        and global regions, this page walks you through what your team gets.
+                    </p>
+                    <div class="d-flex flex-wrap gap-3">
+                        <a href="#service-details" class="btn btn-success px-4 shadow-sm">
+                            Explore services <i class="bi bi-arrow-down-short ms-1"></i>
+                        </a>
+                        <a href="{{ route('index') }}#pricing" class="btn btn-outline-success px-4">
+                            Jump to pricing on Home
+                        </a>
+                    </div>
+                    <div class="service-badges mt-4 d-flex flex-wrap gap-2">
+                        <span class="service-pill"><i class="bi bi-globe2 me-1"></i>BD • UAE • EU • US • Africa</span>
+                        <span class="service-pill"><i class="bi bi-shield-lock me-1"></i>Compliance-ready</span>
+                        <span class="service-pill"><i class="bi bi-lightning-charge me-1"></i>Always-on monitoring</span>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="service-hero-card reveal">
+                        <div class="d-flex align-items-center justify-content-between mb-3">
+                            <div>
+                                <p class="text-muted small mb-1">What you unlock</p>
+                                <h5 class="fw-bold mb-0 text-ink">Managed, resilient, secure</h5>
+                            </div>
+                            <span class="badge rounded-pill bg-success-subtle text-success fw-semibold">
+                                Live 24/7
+                            </span>
+                        </div>
+                        <ul class="list-unstyled mb-3 service-checklist">
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>Tiered infrastructure with proactive monitoring</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>Flexible compute + storage bundles per region</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>Security, backups, and compliance baked in</li>
+                            <li><i class="bi bi-check-circle-fill text-success me-2"></i>Human support that answers in minutes</li>
+                        </ul>
+                        <div class="d-flex flex-wrap gap-2">
+                            <span class="mini-badge"><i class="bi bi-cpu me-1"></i>High performance</span>
+                            <span class="mini-badge"><i class="bi bi-cloud-arrow-up me-1"></i>Multi-cloud ready</span>
+                            <span class="mini-badge"><i class="bi bi-emoji-smile me-1"></i>Human SLA</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="service-overview">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 reveal">
+                    <div class="service-card h-100">
+                        <div class="icon-circle bg-success-subtle text-success mb-3">
+                            <i class="bi bi-diagram-3"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Elastic infrastructure</h5>
+                        <p class="mb-0 text-muted">Scale compute, memory, and storage independently. Mix bare metal and virtual resources across our regions.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="service-card h-100">
+                        <div class="icon-circle bg-primary-subtle text-primary mb-3">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Security-first design</h5>
+                        <p class="mb-0 text-muted">Layered firewalls, DDoS protection, encrypted backups, and governance aligned with your compliance needs.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 reveal">
+                    <div class="service-card h-100">
+                        <div class="icon-circle bg-danger-subtle text-danger mb-3">
+                            <i class="bi bi-headset"></i>
+                        </div>
+                        <h5 class="fw-bold mb-2">Managed by experts</h5>
+                        <p class="mb-0 text-muted">24/7 engineers, guided migrations, and performance tuning so you stay focused on your product.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @if($categories->count())
+    <section class="service-shortcuts">
+        <div class="container">
+            <div class="d-flex align-items-center justify-content-between flex-wrap gap-3 mb-3">
+                <div>
+                    <p class="service-kicker mb-1">Jump to a service</p>
+                    <h4 class="fw-bold mb-0">Browse what fits your workload</h4>
+                </div>
+                <a href="{{ route('index') }}#pricing" class="text-decoration-none fw-semibold text-success">
+                    Go to pricing & checkout <i class="bi bi-arrow-right"></i>
+                </a>
+            </div>
+            <div class="service-chip-row">
+                @foreach($categories as $category)
+                    @php $anchor = $anchorFor($category); @endphp
+                    <a class="service-chip" href="#{{ $anchor }}">
+                        <i class="bi bi-dot"></i>{{ $category->name }}
+                    </a>
+                @endforeach
+            </div>
+        </div>
+    </section>
+    @endif
+
+    <section class="service-journey">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-lg-5 reveal">
+                    <p class="service-kicker mb-2">How we deliver</p>
+                    <h3 class="fw-bold mb-3">From onboarding to day-2 operations</h3>
+                    <p class="text-muted mb-4">A simple, transparent sequence keeps projects moving. Expect proactive comms, clear cutover windows, and post-launch tuning.</p>
+                    <div class="d-flex gap-3 flex-wrap">
+                        <span class="mini-badge"><i class="bi bi-clock-history me-1"></i>Rapid setup</span>
+                        <span class="mini-badge"><i class="bi bi-shield-lock me-1"></i>Hardened baseline</span>
+                        <span class="mini-badge"><i class="bi bi-graph-up me-1"></i>Performance SLOs</span>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div class="journey-steps">
+                        <div class="journey-step reveal">
+                            <div class="step-dot"></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Assess & architect</h6>
+                                <p class="mb-0 text-muted">We map your workloads, resilience goals, and data residency to the right regions and capacity model.</p>
+                            </div>
+                        </div>
+                        <div class="journey-step reveal">
+                            <div class="step-dot"></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Provision & secure</h6>
+                                <p class="mb-0 text-muted">Deploy infrastructure with hardened images, access controls, monitoring, and backup policies from day one.</p>
+                            </div>
+                        </div>
+                        <div class="journey-step reveal">
+                            <div class="step-dot"></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Migrate & optimize</h6>
+                                <p class="mb-0 text-muted">Guided migrations with performance baselines, stress tests, and right-sizing recommendations.</p>
+                            </div>
+                        </div>
+                        <div class="journey-step reveal">
+                            <div class="step-dot"></div>
+                            <div>
+                                <h6 class="fw-bold mb-1">Operate & support</h6>
+                                <p class="mb-0 text-muted">24/7 monitoring, incident response, and quarterly reviews to keep your stack healthy.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="service-details" class="service-details">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="service-kicker mb-1">Service catalog</p>
+                <h3 class="fw-bold mb-2">All the ways we support your workloads</h3>
+                <p class="text-muted mb-0">Browse the plans by category for a quick understanding of what each offers. No pricing shown here�??view that on Home.</p>
+            </div>
+
+            @forelse($categories as $category)
+                @php
+                    $anchor = $anchorFor($category);
+                @endphp
+                <div id="{{ $anchor }}" class="service-block reveal">
+                    <div class="row g-4 align-items-start">
+                        <div class="col-lg-4">
+                            <div class="service-block-head">
+                                <p class="service-kicker mb-2">Category</p>
+                                <h4 class="fw-bold mb-2">{{ $category->name }}</h4>
+                                <p class="text-muted mb-0">
+                                    Explore the plans in this category to understand what each delivers. For pricing and specs, use the Home page.
+                                </p>
+                            </div>
+                        </div>
+                        <div class="col-lg-8">
+                            <div class="row g-3">
+                                @forelse($category->products as $product)
+                                    <div class="col-12">
+                                        <div class="product-detail-card h-100">
+                                            <div class="d-flex justify-content-between align-items-start gap-3 flex-wrap">
+                                                <div>
+                                                    <h5 class="fw-bold mb-1">{{ $product->name }}</h5>
+                                                    <p class="text-muted small mb-0">
+                                                        A concise overview of this plan. For full specs and pricing, return to the Home pricing section.
+                                                    </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                @empty
+                                    <div class="col-12">
+                                        <div class="alert alert-warning mb-0">No products are active under this category.</div>
+                                    </div>
+                                @endforelse
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            @empty
+                <div class="alert alert-info text-center">Services are being updated. Please check back soon.</div>
+            @endforelse
+        </div>
+    </section>
+
+    <section class="service-cta">
+        <div class="container">
+            <div class="row align-items-center g-3">
+                <div class="col-lg-8">
+                    <h4 class="fw-bold mb-2">Ready to see live plans and offers?</h4>
+                    <p class="text-muted mb-0">Head back to the homepage to compare pricing by region and pick a plan. Our team can guide you on a quick call.</p>
+                </div>
+                <div class="col-lg-4 d-flex gap-2 justify-content-lg-end">
+                    <a href="{{ route('index') }}#pricing" class="btn btn-success px-4">Open pricing</a>
+                    <a href="{{ route('index') }}" class="btn btn-outline-success px-4">Back home</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('is-visible');
+                }
+            });
+        }, { threshold: 0.15 });
+
+        document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+    });
+</script>
+</body>
+</html>
+
